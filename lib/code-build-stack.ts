@@ -29,8 +29,8 @@ export class CodeBuildStack extends cdk.Stack {
         })
 
         new lambda.Function(this, 'LambdaFunction', {
-            runtime: lambda.Runtime.NODEJS_18_X,
-            code: lambda.Code.fromAsset('lambda'),
+            runtime: lambda.Runtime.PYTHON_3_10,
+            code: lambda.Code.fromAsset('lib/lambda'),
             handler: 'index.handler'
         });
         new s3.Bucket(this,'Bucket',{
